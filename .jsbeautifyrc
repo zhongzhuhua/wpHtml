@@ -1,18 +1,22 @@
 {
   "html": {
     "indent_char": " ",
-    "indent_size": 2
+    "indent_size": 4
   },
   "css": {
     "indent_char": "",
-    "indent_size": 2
+    "indent_size": 4,
+    "max_preserve_newlines": 2,
+    "preserve_newlines": true
   },
   "js": {
     "indent_char": "",
-    "indent_size": 2
+    "indent_size": 4,
+    "max_preserve_newlines": 2,
+    "preserve_newlines": true
   },
   "json": {
     "indent_char": "",
-    "indent_size": 2  
+    "indent_size": 4  
   }
 }
