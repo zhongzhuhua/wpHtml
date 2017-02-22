@@ -12,6 +12,12 @@
     * env.md 搭建开发环境
     * code.js 代码规范
 
+## 执行指令
+
+    * 目前只能支持 npm 指令
+    * npm run [环境指令] [打包或者要启动的项目] [-c=指定打包配置文件，默认 default] [-s] [-z=打包后的zip包文件名称] [-p=端口号默认4050]build
+    * c = default 引用的是 server/build/default.js
+    * -s 存在的时候，代表打单项目，也就是说，有多个项目的时候，是独立一个一个打包出来的
 
 ## 目录结构
 
@@ -29,7 +35,8 @@
 ├── 其他文件夹                -- 项目文件夹，每个项目独立一个文件夹，注意项目名称不能是 html sass js ensure components zip
 server                      -- node 脚本，服务器脚本和配置脚本
 ├── utils.js                -- 常用 node 工具类
-├── backup.js               -- 备份脚本
+├── configs.js              -- webpack 打包配置文件
+├── build                   -- 所有特殊重定义的打包配置文件
 .gitignore                  -- git 配置
 README.md                   -- 项目使用基础文档
 package.json                -- 项目配置和依赖

@@ -1,5 +1,7 @@
-'use strict';
-var People = require('../coms/People');
-console.log(People);
-People.init('ice snow');
+var People = {
+    say: function () {
+        console.log('zhong2');
+    }
+};
+
 People.say();

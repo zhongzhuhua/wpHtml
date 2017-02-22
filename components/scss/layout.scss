@@ -29,11 +29,6 @@ section {
     padding: 0;
 }
 
-html,
-body {
-    height: 100%;
-}
-
 body {
     font-family: 'Helvetica Neue', Helvetica, STHeiti, sans-serif;
     overflow-x: hidden;
@@ -57,6 +52,7 @@ img {
 
 input {
     outline: none;
+    border: 0;
     border-radius: 0;
     background-color: inherit;
     box-shadow: none;
@@ -89,20 +85,4 @@ img {
 
 i {
     font-style: normal;
-}
-
-.clearfix {
-    @include clearfix;
-}
-
-.hidden {
-    display: none;
-}
-
-.fl {
-    float: left;
-}
-
-.fr {
-    float: right;
 }
