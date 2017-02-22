@@ -3,19 +3,20 @@ let exclude = /(node_modules|bower_components|.DS_Store)/;
 
 // 添加 entryMaps
 let entryMaps = {
-    'demo/js/index': './app/demo/js/index.js'
+    'demo/js/index': ['./app/demo/js/index.js']
 };
 
-if (process)
-
+if (process.env.nodeEnv == 'dev') {
+    for (let key in entryMaps) {
+        entryMaps[key].unshift('webpack-hot-middleware/client?reload=true');
+    }
+}
 
 module.exports = {
     plugins: [
         new webpack.HotModuleReplacementPlugin()
     ],
-    entry: {
-        'demo/js/index': ['webpack-hot-middleware/client?reload=true', './app/demo/js/index.js']
-    },
+    entry: entryMaps,
     //入口文件输出配置
     output: {
         path: '/dist',

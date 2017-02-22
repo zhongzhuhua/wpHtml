@@ -1,6 +1,7 @@
 // 总入口文件
 // 获取用户 npm 执行的配置
-let userConfig = require('./server/configs').getConfigs();
+let configs = require('./server/configs').getConfigs();
+let userConfigs = configs.userConfigs;
 // 创建服务器对象，是否开发环境，读取端口
 let http = require('http');
 let express = require('express');
@@ -8,7 +9,7 @@ let app = express();
 let reload = require('reload');
 let webpack = require('webpack');
 let swig = require('swig');
-let port = 4050;
+let port = userConfigs.port || 4050;
 let webpackConfig = require('./webpack.config');
 let webpackDevMiddleware = require('webpack-dev-middleware');
 let webpackHotMiddleware = require('webpack-hot-middleware');
@@ -50,5 +51,5 @@ server.listen(port, '0.0.0.0', function onStart(err) {
     if (err) {
         console.log(err);
     }
-    console.log('启动成功');
+    console.log('启动成功，启动端口号：' + port);
 });

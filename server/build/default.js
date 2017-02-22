@@ -5,7 +5,16 @@
  */
 let env = process.env.nodeEnv;
 
-let config = {
+/**
+ * 获取配置文件
+ * @param options 配置文件
+   {
+     zip: 打包后的 zip name
+     publicPath: 静态文件目录
+     simple: 是否单项目
+   }
+ */
+module.exports = {
     // 是否压缩脚本
     minJs: env == 'prd',
     // 是否压缩样式
@@ -14,8 +23,6 @@ let config = {
     minHtml: env == 'prd',
     // 是否压缩图片
     minImg: env == 'prd',
-    zip: null,
-    publicPath: null,
     // 多项目打包配置
     packMany: {
         // 压缩后的 zip 包名称
@@ -29,18 +36,3 @@ let config = {
         publicPath: '/dmz/'
     }
 };
-
-/**
- * 获取配置文件
- * @param options 配置文件
-   {
-     zip: 打包后的 zip name
-     publicPath: 静态文件目录
-     simple: 是否单项目
-   }
- */
-module.exports = function (options) {
-    options.
-    return config;
-};
-
